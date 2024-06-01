@@ -1,15 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
 -- Inner Join
 Select c.id_compra, cl.nombre AS CLIENTE, c.fecha_compra, c.total
 from Compras c
