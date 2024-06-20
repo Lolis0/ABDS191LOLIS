@@ -74,20 +74,7 @@ INSERT INTO usuarios (nombre, apellido_1, apellido_2, contraseña, telefono, corr
 ('Ana', 'García', 'Fernández', 'password4', 1234567893, 'anagarcia@example.com', '1992-09-12', 4),
 ('Luis', 'Martín', 'González', 'password5', 1234567894, 'luismartin@example.com', '1983-11-30', 5),
 ('Laura', 'Hernández', 'Ruiz', 'password6', 1234567895, 'laura.hernandez@example.com', '1987-04-25', 1),
-('Pedro', 'Díaz', 'Torres', 'password7', 1234567896, 'pedro.diaz@example.com', '1995-06-18', 2),
-('Lucía', 'Gómez', 'Ramírez', 'password8', 1234567897, 'lucia.gomez@example.com', '1991-08-07', 3),
-('Miguel', 'Sánchez', 'Flores', 'password9', 1234567898, 'miguel.sanchez@example.com', '1989-03-16', 4),
-('Elena', 'Jiménez', 'Moreno', 'password10', 1234567899, 'elena.jimenez@example.com', '1993-12-22', 5),
-('Pablo', 'Romero', 'Ortega', 'password11', 1234567810, 'pablo.romero@example.com', '1986-01-19', 1),
-('Carmen', 'Vázquez', 'Delgado', 'password12', 1234567811, 'carmen.vazquez@example.com', '1984-05-09', 2),
-('Javier', 'Domínguez', 'Muñoz', 'password13', 1234567812, 'javier.dominguez@example.com', '1994-07-03', 3),
-('Raquel', 'Gil', 'Castro', 'password14', 1234567813, 'raquel.gil@example.com', '1992-10-05', 4),
-('Adrián', 'Vargas', 'Ramos', 'password15', 1234567814, 'adrian.vargas@example.com', '1988-12-14', 5),
-('Marta', 'Iglesias', 'Pérez', 'password16', 1234567815, 'marta.iglesias@example.com', '1989-09-23', 1),
-('David', 'Ortiz', 'Serrano', 'password17', 1234567816, 'david.ortiz@example.com', '1990-02-28', 2),
-('Sandra', 'Rubio', 'Molina', 'password18', 1234567817, 'sandra.rubio@example.com', '1987-11-12', 3),
-('Rubén', 'Méndez', 'Santiago', 'password19', 1234567818, 'ruben.mendez@example.com', '1993-08-15', 4),
-('Nuria', 'Cruz', 'Ferrer', 'password20', 1234567819, 'nuria.cruz@example.com', '1985-03-08', 5);
+('Pedro', 'Díaz', 'Torres', 'password7', 1234567896, 'pedro.diaz@example.com', '1995-06-18', 2);
 
 SELECT * FROM articulos
 INSERT INTO articulos (texto, id_usuario) VALUES

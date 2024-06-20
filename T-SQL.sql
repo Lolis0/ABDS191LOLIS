@@ -48,7 +48,6 @@ BEGIN
 
 END
 
-*/
 
 --RETURN
 declare @contador int = 0
@@ -74,3 +73,24 @@ BEGIN CATCH
 END CATCH
 print ('Soy otra consulta')
 print ('yo tambien')
+ */
+
+ -- CASE 
+
+ -- Declaramos variables                
+ declare @valor int
+ declare @resultado char(10)='' -- '' son vacio 
+ set @valor = 20 --asignamos un valor
+
+ set @resultado=(case when @valor=10 then 'ROJO'
+						when @valor=20 then 'MORADO'
+						when @valor =30 then 'VERDE'
+						else 'GRIS'
+						end)
+Print @resultado
+-- Hacemos una consulta
+select * ,(case when disponibilidad =1 then 'VERDE'
+				when disponibilidad = 0 then 'ROJO'
+				else 'NEGRO' END) AS INDICADOR
+				from Inventario
+
