@@ -19,6 +19,8 @@ EXEC sp_InsertarUsuarios @Nombre = 'Carlos García', @Email = 'carlos.garcia@exam
 
 SELECT * FROM Usuarios
 
+-----------------------------------------------------------------------
+
 CREATE PROCEDURE sp_EditarSuscripcion
     @SuscripcionID INT,
     @UsuarioID INT,
@@ -45,11 +47,71 @@ EXEC sp_EditarSuscripcion @SuscripcionID = '3', @UsuarioID = '3', @FechaInicio =
 
 Select * from Suscripciones
 
+----------------------------------------------------------------
 
 CREATE PROCEDURE sp_EliminarHistorialVisualizacion
-    @IdHistorial INT
+    @HistorialID INT
 AS
 BEGIN
     DELETE FROM HistorialVisualizacion
-    WHERE HistorialD = @IdHistorial
+    WHERE HistorialID = @HistorialID
 END;
+
+EXEC sp_EliminarHistorialVisualizacion @HistorialID = '1'
+
+SELECT * FROM HistorialVisualizacion
+
+-------------------------------------------------------------
+
+CREATE PROCEDURE sp_ConsultarUsuariosPorTipoSuscripcion
+@Tipo NVARCHAR (50)
+AS
+BEGIN
+    SELECT 
+        U.UsuarioID,
+        S.SuscripcionID,
+        S.Tipo
+    FROM 
+        Usuarios U
+    INNER JOIN 
+        Suscripciones S ON U.UsuarioID = S.UsuarioID
+    WHERE 
+        S.Tipo = @Tipo
+END;
+
+EXEC sp_ConsultarUsuariosPorTipoSuscripcion @Tipo = 'Premium'
+
+Select * from Suscripciones
+
+------------------------------------------------------------------------
+
+CREATE PROCEDURE sp_ConsultarPeliculasReproducidas
+@UsuarioID INT,
+@Genero NVARCHAR (50)
+
+AS
+BEGIN
+    SELECT 
+		P.PeliculaId,
+        P.Titulo,
+        P.Genero,
+        H.FechaVisualizacion
+    FROM 
+        HistorialVisualizacion H
+    INNER JOIN 
+        Peliculas P ON H.PeliculaID = P.PeliculaID
+    WHERE 
+		H.UsuarioID = @UsuarioID
+		AND
+        P.Genero = @Genero
+END;
+
+select * from HistorialVisualizacion
+SELECT * FROM Peliculas
+EXEC sp_ConsultarPeliculasReproducidas @UsuarioID= '3', @Genero = 'Drama'
+EXEC sp_ConsultarPeliculasReproducidas @UsuarioID= '2', @Genero = 'Romance'
+EXEC sp_ConsultarPeliculasReproducidas @UsuarioID= '1', @Genero = 'Cienicia Ficcion'
+
+se
+
+Select * from Suscripciones
